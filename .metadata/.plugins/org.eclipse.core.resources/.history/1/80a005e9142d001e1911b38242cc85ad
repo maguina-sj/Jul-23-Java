@@ -1,0 +1,14 @@
+package com.lookify.repositories;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface SongsRepo extends CrudRepository<Song,Long> {
+	public List<Songs> findAll();
+	
+	public List<Songs> findByArtistContaining(String artist);
+	
+	public List<Songs> findTop10ByOrderByRatingDesc();
+}
+
